@@ -59,3 +59,56 @@ You'll wanna create a file called `WhereAmI.java` with the following contents:
 On your computer (NOT while SSH'd into the server) run the file using `javac` and `java`. Then, in the terminal, run:
 
 `scp WhereAmI.java cs15lwi22zzz@ieng6.ucsd.edu:~/`
+
+You should be prompted with a password like when you SSH'd earlier. Once you input it, you should be able to SSH back onto the server and use `ls` to see the `WhereAmI.java` file and even run it from the ieng6 computer using `javac` and `java`.
+
+## Part 5: SSH Keys
+
+So all this stuff is pretty cool but inputting your password everytime you want to SSH and do related things is annoying. Would be pretty cool if we had an autofill feature no?
+
+SSH Keys. It's like a saved password using a program called `ssh-keygen` to create a public and private "key". The public key is put on the server, while the private stays on your client computer. 
+
+Run key-gen like this: 
+
+<img width="559" alt="Screen Shot 2022-01-14 at 11 34 20 AM" src="https://user-images.githubusercontent.com/97696585/149574670-9ac92d8f-c693-4a49-baff-12cbc76cb17c.png">
+
+If you're on windows, follow these extra steps:
+
+[https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement#user-key-generation](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement#user-key-generation)
+
+Then, we need to put the `id_rsa` file on the server using:
+```
+$ ssh cs15lwi22akh@ieng6.ucsd.edu
+<Enter Password>
+# now on server
+$ mkdir .ssh
+$ <logout>
+# back on client
+$ scp /Users/CharS/.ssh/id_rsa.pub cs15lwi22akh@ieng6.ucsd.edu:~/.ssh/authorized_keys
+# You use your username and the path you saw in the command above
+```
+
+Now you can `ssh` or `scp` without inputting your password!
+
+## Part 6: Making Remote Running Even More Pleasant 
+
+There's a bunch of ways to perform commands or converting files between the client and server so try out what you've learned to try to figure them out!
+
+Hints:
+- If you put a command in quotes after you `ssh` it'll run on the remote server and then exit.
+
+`$ ssh cs15lwi22zz@ieng6.ucsd.edu "ls"`
+
+<img width="559" alt="Screen Shot 2022-01-14 at 11 44 17 AM" src="https://user-images.githubusercontent.com/97696585/149575793-fc02f042-1b5c-4e39-bbe6-624635f8d6bf.png">
+
+- You can also use semicolons to run multiple commands
+
+`$ scp WhereAmI.java OtherMain.java; javac OtherMain.java; java WhereAmI`
+
+-The up arrow also allows you to access past commands
+
+## Conclusion
+
+Basically, you've just hacked into the mainframe. 
+
+`nice`
