@@ -109,6 +109,10 @@ Hints:
 
 ## Conclusion
 
-Basically, you've just hacked into the mainframe. 
+Now you wanna see some *REAL* speed?
+
+![image](https://user-images.githubusercontent.com/97696585/151490293-1002cea0-b07f-4e63-8ac4-35acd05fe618.png)
+
+With the use of an SSH key, and having the command saved in my command history (and thus accessible by using the up-arrow), I was able to `ls` and check the files on the ieng6 server using only 2 keystrokes: up-arrow, then enter. 
 
 `nice`
