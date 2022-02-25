@@ -10,6 +10,9 @@ By using `-r` after `scp`, it tells the command to run recursively, allowing us 
 
 ![image](https://user-images.githubusercontent.com/97696585/153660241-0dea59ff-e673-4420-9a0e-f89c26708b03.png)
 
+<img width="546" alt="Screen Shot 2022-02-25 at 8 46 48 AM" src="https://user-images.githubusercontent.com/97696585/155726011-3b63ecd7-ed7d-49bc-b32d-59c341c1b986.png">
+
+
 ![image](https://user-images.githubusercontent.com/97696585/153661222-7910f7d3-7b8f-47e0-b38c-aac90e85f472.png)
 
 If we look here, using `ls` we can see that my directory `lab-6` succesfully copied over. 
